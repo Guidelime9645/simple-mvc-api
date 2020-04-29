@@ -24,15 +24,16 @@ class HomeController extends AbstractController
     {
 
         $url = 'https://api.windy.com/api/webcams/v2/map/90,180,-90,-180,3';
+        $disneyUrl = 'https://api.windy.com/api/webcams/v2/list/';
         $picData = $this->get($url.'?show=webcams:location,image&key=' . APP_API_KEY);
 
+        $disneyData = $this->get($disneyUrl.'webcam=1248188708?show=webcams:location,image&key=' . APP_API_KEY);
         $webcams = $picData['result']['webcams'];
-
-
+        $disney = $disneyData['result']['webcams'][0];
 
         //echo "<pre>";
         //var_dump($picData['result']['webcams']);
         //echo "</pre>";
-        return $this->twig->render('Home/index.html.twig', ['webcams' => $webcams]);
+        return $this->twig->render('Home/index.html.twig', ['webcams' => $webcams, 'disney' => $disney]);
     }
 }

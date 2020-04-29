@@ -10,13 +10,20 @@
             {% for webcam in webcams %}
                 var marker = WE.marker([{{ webcam.location.latitude }}, {{ webcam.location.longitude }}]).addTo(earth);
                 marker.bindPopup(
-                    "<img src='{{ webcam.image.current.preview }}'><b>{{ webcam.location.city }}</b><br>" +
+                    "<img src='{{ webcam.image.current.preview }}' height='100%' width='100%'><b>{{ webcam.location.city }}</b><br>" +
                     "longitude : {{ webcam.location.longitude }}<br />" +
                     "latitude : {{ webcam.location.latitude }}<br />" +
                     "<a href='/Video/picture/{{ webcam.id }}' class='popup'>view camera</a>",
                     {maxWidth: 150, closeButton: true});
             {% endfor %}
 
+            var marker = WE.marker([45.7833, 3.0833]).addTo(earth);
+            marker.bindPopup(
+                "<img src='{{ disney.image.current.preview }}' height='100%' width='100%'><b>{{ disney.location.city }}</b><br>" +
+                "longitude : 3.0833<br />" +
+                "latitude : 45.7833<br />" +
+                "<a href='/Video/picture/{{ disney.id }}' class='popup'>view camera</a>",
+                {maxWidth: 150, closeButton: true});
 
             earth.setView([48.8534, 2.3488], 6);
         }
