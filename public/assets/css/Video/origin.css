@@ -66,3 +66,46 @@ td{
     box-shadow: -1px 0px 7px 2px rgba(0,0,0,0.4);
 
 }
+@media screen and (max-width:951px) and (min-width:752px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe{
+        margin-left: 170px;
+    }
+    .divtext{
+        margin-left: 190px;
+    }
+}
+@media screen and (max-width:751px) and (min-width:491px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe{
+        margin-left: 140px;
+    }
+    .divtext{
+        margin-left: 120px;
+    }
+}
+@media screen and (max-width:490px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    iframe{
+        margin-left: 110px;
+        width: 100%;
+    }
+    .divtext{
+        margin-left: 70px;
+    }
+}
