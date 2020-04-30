@@ -16,12 +16,12 @@ class RandomController extends AbstractController
         $viewData = $this->get($url.'?show=webcams:location,statistics&key=' .APP_API_KEY);
         $view = $viewData['result']['webcams'][0]['statistics'];
         $para = $paragrapheData['result']['webcams'][0];
-        //$data3 = 'https://webcams.windy.com/webcams/stream/'.$id;
+        $data3 = 'https://webcams.windy.com/webcams/stream/'.$videoData['result']['webcams'][0]['id'];
         $data = $videoData['result']['webcams'][0]['player']['live'];
         $data2 = $videoData['result']['webcams'][0]['player']['day'];
         if ($data['available']==true) {
             return $this->twig->render('Random/random.html.twig', [
-                'data' => $data,
+                'data' => $data3,
                 'para' => $para['location'],
                 'view' => $view['views'],
             ]);
